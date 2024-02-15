@@ -10,11 +10,20 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  z-index: 2;
 }
 .header-img {
   width: 202.9px;
-  height: 160px;
+  height: 68px;
   margin-left: -220px;
+  position: relative;
+}
+.header-img a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
 }
 .header-img img {
   width: 100%;
@@ -38,9 +47,7 @@
 .header-nav-item a {
   text-decoration: none;
   color: #1e0803;
-}
-.header-nav-item a:hover {
-  opacity: 0.5;
+  position: relative;
 }
 /* FOOTER */
 .footer {
@@ -99,11 +106,18 @@
 }
 .footer-logo {
   width: 305px;
-  height: 190px;
+  width: 269px;
+  height: 105px;
   position: absolute;
   left: 5%;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
+}
+.footer-logo a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
 }
 .footer-logo img {
   width: 100%;
@@ -159,7 +173,7 @@
   display: inline-block;
   border: 1px solid #fff;
   position: absolute;
-  width: 111px;
+  width: 100%;
   bottom: 0;
   right: 0;
 }
@@ -217,9 +231,9 @@
   display: inline-block;
   border: 1px solid #fff;
   position: absolute;
-  width: 100px;
+  width: 30%;
   top: 16%;
-  right: 40%;
+  right: 70%;
 }
 .footer-send-notify {
   width: 353px;
@@ -299,7 +313,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .about-us-header-page .about-us-header-title-page {
   width: 801px;
@@ -328,8 +342,13 @@
   bottom: 0;
   right: 35%;
   border-radius: 257px;
-  background: #f45510;
+  background: #fff;
   box-shadow: 0px 6px 17px 0px rgba(84, 90, 232, 0.25);
+  transition: 0.3s;
+}
+.about-us-header-page .about-us-header-btn-page:hover,
+.about-us-header-page .about-us-header-btn-page:hover button {
+  background-color: #f45510;
 }
 .about-us-header-page .about-us-header-btn-page button {
   position: absolute;
@@ -338,12 +357,13 @@
   transform: translate(-50%, -50%);
   width: 102px;
   height: 24px;
-  background: #f45510;
+  background: #fff;
   border: none;
+  transition: 0.3s;
 }
 .about-us-header-btn-page button a {
   position: absolute;
-  color: #fff;
+  color: #f45510;
   font-family: Itim;
   font-size: 21px;
   font-style: normal;
@@ -353,6 +373,10 @@
   transform: translateY(-50%);
   display: block;
   text-decoration: none;
+  transition: 0.3s;
+}
+.about-us-header-btn-page:hover button a {
+  color: #fff;
 }
 /* ABOUT US FROM HOME */
 .about-us {
@@ -387,6 +411,11 @@
   top: 15px;
   left: 50%;
   transform: translateX(-50%);
+  width: 305px;
+}
+.about-us-vector img {
+  width: 100%;
+  height: 100%;
 }
 .about-us-section {
   display: grid;
@@ -459,7 +488,7 @@
   text-transform: capitalize;
 }
 .rule-header-title .rule-header-vector {
-  width: 315.738px;
+  width: 257.738px;
   height: 3px;
   position: absolute;
   bottom: 50%;
@@ -482,19 +511,20 @@
   border-radius: 40px 0px;
   background: rgba(232, 75, 35, 0.63);
   box-shadow: 0px 10px 30px 0px rgba(83, 162, 192, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .rule-header-box-item .box-item-background {
   width: 166.026px;
   height: 173.964px;
   border-radius: 40px 0px;
-  background: #def1fe;
-  box-shadow: 0px 10px 30px 0px rgba(83, 162, 192, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.rule-header-box-item img {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px 0px;
+  object-fit: cover;
 }
 .box-item-background .box-rule-img {
   width: 84.145px;
@@ -541,5 +571,27 @@
   font-style: normal;
   font-weight: 400;
   line-height: 33px; /* 143.478% */
-  text-transform: lowercase;
+}
+/* EFFECT HOVER MENU */
+.header-nav-item a::after {
+  content: "";
+  background-color: #fff;
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+}
+.header-nav-item:hover a::after {
+  width: 100%;
+}
+.header-nav-item span {
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
 }
